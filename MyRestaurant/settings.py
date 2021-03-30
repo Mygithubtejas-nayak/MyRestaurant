@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Restaurantapp.apps.RestaurantappConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

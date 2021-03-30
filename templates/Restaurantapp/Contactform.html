@@ -1,0 +1,18 @@
+{% extends 'Restaurantapp/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row justify-content-center">
+	<div class="col-md-6">
+		<div class="card card-body">
+    <form method="post">
+        {% csrf_token %}
+        {{ Form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+    
+   
+{% endblock content %}
