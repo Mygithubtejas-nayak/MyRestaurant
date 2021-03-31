@@ -2,9 +2,15 @@
 {% load static %}
 {% block content %}
 
+
+
 <div class="row justify-content-center">
+    
 	<div class="col-md-6">
+        <br>
 		<div class="card card-body">
+            
+            <h2 class="row justify-content-center">Contact Form</h2>
     <form method="post">
         {% csrf_token %}
         {{ Form.as_p }}
