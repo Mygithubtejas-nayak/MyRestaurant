@@ -3,22 +3,30 @@
 {% block content %}
 
 
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <br>
+                <div class="card card-body">
+                    <h2 class="row justify-content-center">Contact Form</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ Form.as_p }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
 
-<div class="row justify-content-center">
-    
-	<div class="col-md-6">
-        <br>
-		<div class="card card-body">
-            
-            <h2 class="row justify-content-center">Contact Form</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ Form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-</div>
-</div>
+            <div class="col-lg-6">
+                <br>
+                <div class="card card-body">
+                    <h2 class="row justify-content-center">Our Location</h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     
    
 {% endblock content %}
