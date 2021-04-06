@@ -30,7 +30,7 @@
     
 
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href={% url 'homepage' %}>Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,36 +42,42 @@
                         <a class="nav-link" aria-current="page" href= {% url 'homepage' %}>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <a class="nav-link" href={% url 'OrderNow' %}>Order Online</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href={% url 'ContactForm' %}>Contact Us</a>
                     </li>
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link" href={% url 'LoginForm' %}>Login</a>
+
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hello {{request.user}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li >
+                                <a class="dropdown-item" href={% url 'Logout' %}>Logout</a>
+                            </li>
+                        </ul>
                     </li>
+                    <span class="navbar-text">
+                        
+                    </span>
+                    
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid">
+    
 
         <!--Content Block for Other Pages-->
         {% block content %}
         {% endblock content %}
 
-    </div>
+    
 
 </body>
 </html>

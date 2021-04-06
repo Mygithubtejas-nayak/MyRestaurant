@@ -10,8 +10,11 @@
 
 {% block content %}
 <div class="container">
+    <br>
+    <br>
+    <br>
     <div class="row">
-      <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="col-lg-8 col-xl-7 mx-auto">
         <div class="card card-signin flex-row my-5">
           <div class="card-img-left d-none d-md-flex">
              <!-- Background image for card set in CSS! -->
@@ -45,6 +48,12 @@
               </div>
 
               <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="Create User">
+
+              <p class="d-block text-center mt-2 ">{{ form.errors }}</p>
+
+
+              
+
               <div class="d-block text-center mt-2 ">Already have an account?<a class="d-block text-center mt-2 small" href={% url 'LoginForm' %}>Click to Login</a></div>
               
               
